@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MoviesTips.Views.Movie">
+	<ContentPage.Content>
+    <ScrollView VerticalOptions="Fill" HorizontalOptions="Fill">
+        <StackLayout Padding="0" Spacing="0">
+                
+                <Label x:Name="MovieTitle" HeightRequest="40" VerticalTextAlignment="Center" BackgroundColor="Black" TextColor="White" HorizontalTextAlignment="Center"/>
+                <Image BackgroundColor="Black" x:Name="MoviePoster" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" HeightRequest="562"/>
+
+                <BoxView HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="10" Color="Transparent"></BoxView>
+                
+                <Label Margin="5" Text="Release Date" Font="Bold"/>
+                <Label Margin="5" x:Name="MovieReleaseDate"/>
+
+                <BoxView HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="10" Color="Transparent"></BoxView>
+                
+                <Label Margin="5" Text="Overview" Font="Bold"/>
+                <Label Margin="5" x:Name="MovieOverview"/>
+
+                <BoxView HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="10" Color="Transparent"></BoxView>
+
+                <Label Margin="5" Text="Genres" Font="Bold"/>
+                <Label Margin="5" x:Name="MovieGenres"/>
+         
+        </StackLayout>
+    </ScrollView>        
+	</ContentPage.Content>
+</ContentPage>

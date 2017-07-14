@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="0,20,0,0" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MoviesTips.Views.SearchMovies" NavigationPage.HasNavigationBar="false">
+	<ContentPage.Content>
+
+        <StackLayout>
+
+            <Label Font="Bold" HeightRequest="40" MinimumHeightRequest="40" VerticalTextAlignment="Center" BackgroundColor="Black" TextColor="White" HorizontalTextAlignment="Center" Text="Search Movies" />
+
+            <SearchBar x:Name="MoviesSearch" Placeholder="Search" Text="{Binding SearchedText, Mode=TwoWay}" SearchCommand="{Binding SearchMoviesCommand}" />
+
+            <ListView x:Name="MoviesListView" VerticalOptions="FillAndExpand" RowHeight="110" ItemsSource="{Binding Results}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal"> 
+                            <Image Margin="0" Aspect="AspectFill" HeightRequest ="110" WidthRequest="73" Source="{Binding Poster_Path}" /> 
+                            <StackLayout Padding="0,3,3,3" Spacing="0" HeightRequest="110" MinimumHeightRequest="110" Orientation="Vertical"> 
+                                <Label Text="{Binding Title}" Font="Bold" />
+                                <Label Text="{Binding Release_Date}" FontAttributes="Bold" Font="Small" />
+                                <Label Text="{Binding Overview}" Font="Small" TextColor="Gray" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
+        </StackLayout>
+        
+	</ContentPage.Content>
+</ContentPage>
