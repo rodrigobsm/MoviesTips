@@ -7,34 +7,33 @@ namespace MoviesTips
         public App()
         {
             InitializeComponent();
-			//MainPage = new NavigationPage(new Views.MoviesList());
 
-			// Tabs
-			var UpcomingTab = new NavigationPage(new Views.MoviesList())
-			{
-				Title = "Upcoming",
+            // Create tabs objects.
+            var UpcomingTab = new NavigationPage(new Views.MoviesList())
+            {
+                Title = "Upcoming",
                 Icon = "video-camera.png"
             };
 
             var SearchTab = new NavigationPage(new Views.SearchMovies())
-			{
-				Title = "Search",
+            {
+                Title = "Search",
                 Icon = "search.png"
-			};
+            };
+
+            // Loads tabs into main view
+            MainPage = new TabbedPage()
+            {
+                Title = "Movies",
+                Children = {
+                    UpcomingTab,
+                    SearchTab,
+                }
+            };
 
 
-			MainPage = new TabbedPage()
-			{
-				Title = "Movies",
-				Children = {
-					UpcomingTab,
-					SearchTab,
-				}
-			};
 
-
-
-		}
+        }
 
         protected override void OnStart()
         {

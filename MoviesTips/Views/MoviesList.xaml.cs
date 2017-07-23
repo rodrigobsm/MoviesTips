@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using MoviesTips.ViewModels;
 using Xamarin.Forms;
 
@@ -16,10 +14,10 @@ namespace MoviesTips.Views
         {
             InitializeComponent();
 
-            // Binds with ModelView class
+            // Binds with ModelView class.
             this.BindingContext = this._viewModel;
 
-            // Show movie info view when list view item is tapped
+            // Show movie info view when list view item is tapped.
             this.MoviesListView.ItemTapped += async (sender, e) =>
             {
                 var Result = e.Item as Models.Result;
@@ -33,15 +31,16 @@ namespace MoviesTips.Views
 
         }
 
-		protected void Handle_ItemAppearing(object sender, Xamarin.Forms.ItemVisibilityEventArgs e)
-		{
-            // When the last listview item is displayed, loads more 20 records from webservice (infinite scroll)
+        protected void Handle_ItemAppearing(object sender, Xamarin.Forms.ItemVisibilityEventArgs e)
+        {
+            // When the last listview item is displayed, loads more 20 records from webservice (infinite scroll).
             var items = this.MoviesListView.ItemsSource as IList;
-            if (items != null && e.Item == items[items.Count-1]) {
+            if (items != null && e.Item == items[items.Count - 1])
+            {
                 this._viewModel._page++;
                 this._viewModel.LoadMoviesCommand.Execute(this);
             }
-		}
+        }
 
     }
 }
